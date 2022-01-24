@@ -1,10 +1,15 @@
-// если вы хотите использовать sass-переменные - удалите root
-// colors
 :root {
   // base
-
-  --font-family: "Open Sans";
-  --content-width: 1170px;
-  --container-offset: 15px;
-  --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
+  --font-family: "MyriadPro";
+  // --content-width: 1400px;
+  // --container-offset: 15px;
+  // --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
 }
+
+$green: #00aa4b;
+$gray: #e8e7e7;
+$white: #fff;
+$main: #232323;
+$text: #121212;
+$text-gray: #787878;
+$yellow: #ffaf2d;

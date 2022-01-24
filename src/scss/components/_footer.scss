@@ -1,0 +1,123 @@
+.footer {
+  background-color: $main;
+  padding-top: 90px;
+  overflow-Y: hidden;
+
+  &__inner {
+    margin-bottom: 105px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__title {
+    color: $text-gray;
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 24px;
+    margin-bottom: 30px;
+    pointer-events: none;
+  }
+
+  &__link {
+    color: $white;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 300;
+    display: block;
+  }
+
+  &__text {
+    color: $white;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 300;
+  }
+
+  &__column {
+    &:nth-child(4) {
+      .footer__item {
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  &__bot {
+    background-color: #191919;
+    padding: 40px 0 25px 0;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__bot-link {
+    font-size: 18px;
+    font-weight: 300;
+    color: $white;
+  }
+
+  &__logo {
+    margin-right: 20px;
+  }
+
+  &__address {
+    font-style: normal;
+  }
+}
+
+@media (max-width: 767px) {
+  .footer {
+    &__inner {
+      flex-direction: column;
+    }
+
+    &__list {
+      max-height: 0;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: all .5s ease-in-out;
+    }
+
+    &__item {
+      &:last-child {
+        margin-bottom: 20px;
+      }
+    }
+
+    &__column {
+      margin: 0 20px;
+      border-bottom: 1px solid #4b4b4b;
+
+      &.active .footer__list {
+        max-height: 50vh;
+        opacity: 1;
+        visibility: visible;
+        pointer-events: visible;
+      }
+
+      &.active .footer__title {
+        &::before {
+          transform: rotate(45deg);
+        }
+      }
+    }
+
+    &__title {
+      pointer-events: visible;
+      margin: 0;
+      padding: 20px 0;
+      position: relative;
+
+      &::before {
+        content: '+';
+        position: absolute;
+        top: 20px;
+        right: 5px;
+        transition: all .5s;
+      }
+    }
+  }
+}

@@ -25,7 +25,7 @@ const image = require('gulp-imagemin');
 const {
   readFileSync
 } = require('fs');
-const typograf = require('gulp-typograf');
+// const typograf = require('gulp-typograf');
 const webp = require('gulp-webp');
 const avif = require('gulp-avif');
 const mainSass = gulpSass(sass);
@@ -92,7 +92,9 @@ const svgSprites = () => {
 
 // scss styles
 const styles = () => {
-  return src(paths.srcScss, { sourcemaps: !isProd })
+  return src(paths.srcScss, {
+      sourcemaps: !isProd
+    })
     .pipe(plumber(
       notify.onError({
         title: "SCSS",
@@ -108,7 +110,9 @@ const styles = () => {
     .pipe(gulpif(isProd, cleanCSS({
       level: 2
     })))
-    .pipe(dest(paths.buildCssFolder, { sourcemaps: '.' }))
+    .pipe(dest(paths.buildCssFolder, {
+      sourcemaps: '.'
+    }))
     .pipe(browserSync.stream());
 };
 
@@ -248,9 +252,9 @@ const htmlInclude = () => {
       prefix: '@',
       basepath: '@file'
     }))
-    .pipe(typograf({
-      locale: ['ru', 'en-US']
-    }))
+    // .pipe(typograf({
+    //   locale: ['ru', 'en-US']
+    // }))
     .pipe(dest(buildFolder))
     .pipe(browserSync.stream());
 }

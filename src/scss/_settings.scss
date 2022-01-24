@@ -20,6 +20,8 @@ html {
   min-width: 320px;
   min-height: 100%;
   font-size: 16px;
+  line-height: 110%;
+  background-color: $gray;
 }
 
 .visually-hidden {
@@ -35,6 +37,26 @@ html {
 
 .container {
   margin: 0 auto;
-  padding: 0 var(--container-offset);
-  max-width: var(--container-width);
+  max-width: 1430px;
+  padding: 0 15px;
+
+  // padding: 0 var(--container-offset);
+  // max-width: var(--container-width);
+  &--big {
+    max-width: 1570px;
+  }
+}
+
+.title {
+  color: $main;
+  font-size: 40px;
+  line-height: 44px;
+  font-weight: 400;
+}
+
+@media (max-width: 450px) {
+  .title {
+    font-size: 36px;
+    line-height: 40px;
+  }
 }
